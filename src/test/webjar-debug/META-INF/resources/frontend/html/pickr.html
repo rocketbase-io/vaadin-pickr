@@ -37,7 +37,6 @@
 
             updateColor(colorObject) {
                 var vaadinServer = this.$server;
-                console.log(colorObject.toHEX());
                 vaadinServer.colorChanged(colorObject.toHEX().toString());
             }
         }
