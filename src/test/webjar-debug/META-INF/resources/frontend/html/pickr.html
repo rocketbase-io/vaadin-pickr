@@ -1,0 +1,25 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<dom-module id="vaadin-pickr">
+    <template>
+        <style>
+        </style>
+        <div class="vaadin-pickr-container">
+            <h4>Hi</h4>
+        </div>
+    </template>
+    <script>
+        class VaadinPickr extends Polymer.Element {
+
+            static get is() {
+                return 'vaadin-pickr';
+            }
+
+            constructor() {
+                super();
+            }
+
+        }
+
+        window.customElements.define(VaadinPickr.is, VaadinPickr);
+    </script>
+</dom-module>
