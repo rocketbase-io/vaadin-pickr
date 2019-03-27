@@ -27,23 +27,18 @@
             }
 
             _pickrOptionsChanged(newValue) {
-
                 this.config = JSON.parse(newValue);
                 this.config.el = this.shadowRoot.querySelector('.pickr');
-
                 this.pickr = new Pickr(this.config);
                 this.pickr.on('save', (...args) => {
-                    console.log('save', args);
                     this.updateColor(args[0]);
                 });
-
             }
 
             updateColor(colorObject) {
                 var vaadinServer = this.$server;
-
                 console.log(colorObject.toRGBA());
-                vaadinServer.colorChanged(colorObject.toRGBA());
+                vaadinServer.colorChanged(colorObject.toHEX());
             }
         }
 
