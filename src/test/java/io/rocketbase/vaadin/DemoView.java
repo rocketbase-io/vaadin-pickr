@@ -17,12 +17,14 @@ public class DemoView extends HorizontalLayout {
 
     public DemoView() {
 
-        setHeight("100%");
         setWidth("100%");
 
         setSizeFull();
 
         VerticalLayout layout = new VerticalLayout();
+        layout.setWidth("350px");
+
+        HorizontalLayout horLayout = new HorizontalLayout();
 
         Pickr pickr = new Pickr()
                 .withConfig(PickrConfiguration.builder()
@@ -36,11 +38,12 @@ public class DemoView extends HorizontalLayout {
                                 .build())
                         .build());
 
-        pickr.addColorUpdateListener(pickrEvent -> {
-            hexColorLabel.setText("Your picked color: " + pickrEvent.getColorObject().getHexColor());
-        });
+        horLayout.add(pickr, hexColorLabel);
+        layout.add(new H4("vaadin-pickr"), new Hr(), horLayout);
 
-        layout.add(new H4("vaadin-pickr"), new Hr(), pickr, hexColorLabel);
+        pickr.addColorUpdateListener(pickrEvent -> {
+            hexColorLabel.setText("Color: " + pickrEvent.getColorObject().getHexColor());
+        });
 
         add(layout);
     }
