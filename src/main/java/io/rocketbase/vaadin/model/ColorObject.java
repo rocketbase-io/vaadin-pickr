@@ -8,4 +8,8 @@ import lombok.Data;
 public class ColorObject {
 
     private String hexColor;
+    private String rgbaColor;
+    private String hslaColor;
+    private String hsvaColor;
+    private String cmykColor;
 }

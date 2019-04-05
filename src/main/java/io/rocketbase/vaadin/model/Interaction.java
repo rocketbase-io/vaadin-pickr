@@ -23,7 +23,7 @@ public class Interaction {
 
     private boolean input = true;
 
-    private boolean clear = false;
+    private boolean clear = true;
 
     private boolean save = true;
 

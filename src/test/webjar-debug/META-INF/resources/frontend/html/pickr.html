@@ -37,7 +37,37 @@
 
             updateColor(colorObject) {
                 var vaadinServer = this.$server;
-                vaadinServer.colorChanged(colorObject.toHEX().toString());
+
+                var hexColor = null;
+                var rgbaColor = null;
+                var hslaColor = null;
+                var hsvaColor = null;
+                var cmykColor = null;
+
+                if (this.config.components.interaction.hex) {
+                    hexColor = colorObject.toHEX().toString();
+                }
+
+                if (this.config.components.interaction.rgba) {
+                    rgbaColor = colorObject.toRGBA().toString();
+                }
+
+
+                if (this.config.components.interaction.hsla) {
+                    hslaColor = colorObject.toHSLA().toString();
+                }
+
+
+                if (this.config.components.interaction.hsva) {
+                    hsvaColor = colorObject.toHSVA().toString();
+                }
+
+
+                if (this.config.components.interaction.cmyk) {
+                    cmykColor = colorObject.toCMYK().toString();
+                }
+
+                vaadinServer.colorChanged(hexColor, rgbaColor, hslaColor, hsvaColor, cmykColor);
             }
         }
 
