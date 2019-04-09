@@ -14,22 +14,20 @@ import java.util.List;
 @Builder
 public class PickrConfiguration {
 
-    private String el = "";
+    private final String el = ".pickr";
 
-    private String defaultColor = "";
+    private String defaultColor = "FFFFFF";
 
-    private boolean useAsButton = false;
+    private final boolean useAsButton = false;
 
-    private boolean showAlways = false;
+    private final boolean showAlways = false;
 
     private Components components;
 
     public String getJsonString() {
 
         List<String> parameters = new ArrayList<>();
-        if (el != null) {
-            parameters.add(String.format("\"el\": \"%s\",", el));
-        }
+        parameters.add(String.format("\"el\": \"%s\",", el));
         if (defaultColor != null) {
             parameters.add(String.format("\"default\": \"%s\",", defaultColor));
         }

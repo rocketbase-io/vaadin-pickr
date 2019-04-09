@@ -48,7 +48,6 @@ public class MainView extends Div {
 
         Pickr pickr = new Pickr()
                 .withConfig(PickrConfiguration.builder()
-                        .el(".pickr")
                         .defaultColor("#FFFFFF")
                         .components(Components.builder()
                                 .hue(true)
