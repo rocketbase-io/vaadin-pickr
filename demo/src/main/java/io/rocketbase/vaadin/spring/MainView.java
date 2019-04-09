@@ -1,4 +1,4 @@
-package io.rocketbase.vaadin;
+package io.rocketbase.vaadin.spring;
 
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H3;
@@ -6,12 +6,17 @@ import com.vaadin.flow.component.html.Hr;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.server.PWA;
+import io.rocketbase.vaadin.Pickr;
 import io.rocketbase.vaadin.model.Components;
 import io.rocketbase.vaadin.model.Interaction;
 import io.rocketbase.vaadin.model.PickrConfiguration;
 
-@Route("")
-public class DemoView extends Div {
+import java.io.IOException;
+
+@Route
+@PWA(name = "Project Base for Vaadin Flow with Spring", shortName = "Project Base")
+public class MainView extends Div {
 
 
     VerticalLayout main = new VerticalLayout();
@@ -25,7 +30,7 @@ public class DemoView extends Div {
     Div pickrDiv = new Div();
     Div previewDiv = new Div();
 
-    public DemoView() {
+    public MainView() throws IOException {
 
         setWidth("100%");
 
@@ -97,4 +102,5 @@ public class DemoView extends Div {
         getStyle().set("background-color", "#3766BF");
         add(main);
     }
+
 }
