@@ -17,7 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Tag("vaadin-pickr")
 @HtmlImport("frontend://html/pickr.html")
-@JavaScript("frontend://pickr.js")
+@JavaScript("bower_components/pickr/dist/pickr.min.js")
 public class Pickr extends PolymerTemplate<PickrModel> {
 
     @Getter
